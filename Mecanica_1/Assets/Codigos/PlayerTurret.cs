@@ -64,7 +64,7 @@ public class PlayerTurret : MonoBehaviour
         float g = 9.8f;
         return (Vy0 + Mathf.Sqrt(Vy0 * Vy0 + 2 * g * y0)) / g;
     }
-    
+
 
 
 }
