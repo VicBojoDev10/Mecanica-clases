@@ -8,6 +8,10 @@ TagManager:
   - Piso
   - Enemy
   - Turret
+  - Bomb
+  - Jug1
+  - Jug2
+  - Jug3
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Torreta
-  - 
+  - Player
   - 
   - 
   - 

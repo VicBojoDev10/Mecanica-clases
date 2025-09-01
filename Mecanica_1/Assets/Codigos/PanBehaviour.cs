@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class PanBehaviour : MonoBehaviour
 {
-    public Transform target;
-    public KeyCode movePan;
+    public Transform target1;
+    public Transform target2;
+    public KeyCode Ladoizq;
+    public KeyCode Ladoder;
     public float flyingTime;
     
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(movePan))
-        {
-            GetComponent<Animator>().SetTrigger("Move");
-        }
+        Jugadores();
+
     }
     public void EnableCollider()
     {
@@ -25,8 +25,10 @@ public class PanBehaviour : MonoBehaviour
     {
         if(other.CompareTag("Bomb"))
         {
+            if (Input.GetKeyDown(Ladoizq))
+            { 
             Vector3 P0 = other.transform.position;
-            Vector3 Pf = target.position;
+            Vector3 Pf = target1.position;
             Vector3 g = Physics.gravity;
             float T = flyingTime;
             Vector3 hitVelocity = (Pf - P0) / T - 0.5f * g * T;
@@ -34,6 +36,39 @@ public class PanBehaviour : MonoBehaviour
             Vector3 randomTorque = 100f * Random.onUnitSphere;
             other.GetComponent<Rigidbody>().velocity = hitVelocity;
             other.GetComponent<Rigidbody>().AddTorque(randomTorque, ForceMode.Impulse);
+            }
+
+            if (Input.GetKeyDown(Ladoder))
+            {
+                Vector3 P0 = other.transform.position;
+                Vector3 Pf = target2.position;
+                Vector3 g = Physics.gravity;
+                float T = flyingTime;
+                Vector3 hitVelocity = (Pf - P0) / T - 0.5f * g * T;
+
+                Vector3 randomTorque = 100f * Random.onUnitSphere;
+                other.GetComponent<Rigidbody>().velocity = hitVelocity;
+                other.GetComponent<Rigidbody>().AddTorque(randomTorque, ForceMode.Impulse);
+            }
+        }
+    }
+    private void Jugadores()
+    {
+        if (Input.GetKeyDown(KeyCode.S) && CompareTag("Jug1"))
+        {
+            GetComponent<Animator>().SetTrigger("Move");
+
+        }
+        if (Input.GetKeyDown(KeyCode.K) && CompareTag("Jug2"))
+        {
+            GetComponent<Animator>().SetTrigger("Move");
+
+        }
+        if (Input.GetKeyDown(KeyCode.B) && CompareTag("Jug3"))
+        {
+            GetComponent<Animator>().SetTrigger("Move");
+
+
         }
     }
 }
