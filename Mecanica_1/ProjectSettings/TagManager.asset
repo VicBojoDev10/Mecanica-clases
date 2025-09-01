@@ -12,6 +12,7 @@ TagManager:
   - Jug1
   - Jug2
   - Jug3
+  - Ground
   layers:
   - Default
   - TransparentFX
