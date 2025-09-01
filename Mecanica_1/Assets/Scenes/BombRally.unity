@@ -561,6 +561,7 @@ MonoBehaviour:
   target2: {fileID: 7110043905236489666}
   Ladoizq: 106
   Ladoder: 108
+  bombaenelsarten: 0
   flyingTime: 5
 --- !u!95 &1229842432
 Animator:
@@ -910,6 +911,7 @@ MonoBehaviour:
   target2: {fileID: 249539255}
   Ladoizq: 118
   Ladoder: 110
+  bombaenelsarten: 0
   flyingTime: 5
 --- !u!95 &1557031837
 Animator:
@@ -1248,9 +1250,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 0.25000018, z: 3.4386916}
   m_Center: {x: -0.00000002268559, y: 0.000000051852776, z: 1.7398901}
@@ -1270,6 +1272,7 @@ MonoBehaviour:
   target2: {fileID: 249539255}
   Ladoizq: 97
   Ladoder: 100
+  bombaenelsarten: 0
   flyingTime: 5
 --- !u!95 &1875115968
 Animator:
@@ -1587,7 +1590,7 @@ Transform:
   m_GameObject: {fileID: 919132147530082444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.46, y: 11.88, z: -6.55}
+  m_LocalPosition: {x: 27.41, y: 11.88, z: -7.08}
   m_LocalScale: {x: 0.69808936, y: 0.69808936, z: 0.69808936}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1647,7 +1650,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &919132147530082446
 Rigidbody:

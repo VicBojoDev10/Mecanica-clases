@@ -8,6 +8,7 @@ public class PanBehaviour : MonoBehaviour
     public Transform target2;
     public KeyCode Ladoizq;
     public KeyCode Ladoder;
+    public bool bombaenelsarten = false;
     public float flyingTime;
     
     // Update is called once per frame
@@ -19,29 +20,17 @@ public class PanBehaviour : MonoBehaviour
     public void EnableCollider()
     {
         bool isEnabled = GetComponent<BoxCollider>().enabled;
-        GetComponent<BoxCollider>().enabled = isEnabled;
+        GetComponent<BoxCollider>().enabled = !isEnabled;
+        bombaenelsarten |= isEnabled;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bomb"))
+        if (other.CompareTag("Bomb"))
         {
-            if (Input.GetKeyDown(Ladoizq))
-            { 
-            Vector3 P0 = other.transform.position;
-            Vector3 Pf = target1.position;
-            Vector3 g = Physics.gravity;
-            float T = flyingTime;
-            Vector3 hitVelocity = (Pf - P0) / T - 0.5f * g * T;
-
-            Vector3 randomTorque = 100f * Random.onUnitSphere;
-            other.GetComponent<Rigidbody>().velocity = hitVelocity;
-            other.GetComponent<Rigidbody>().AddTorque(randomTorque, ForceMode.Impulse);
-            }
-
-            if (Input.GetKeyDown(Ladoder))
+            if (bombaenelsarten == true)
             {
                 Vector3 P0 = other.transform.position;
-                Vector3 Pf = target2.position;
+                Vector3 Pf = target1.position;
                 Vector3 g = Physics.gravity;
                 float T = flyingTime;
                 Vector3 hitVelocity = (Pf - P0) / T - 0.5f * g * T;
@@ -50,6 +39,8 @@ public class PanBehaviour : MonoBehaviour
                 other.GetComponent<Rigidbody>().velocity = hitVelocity;
                 other.GetComponent<Rigidbody>().AddTorque(randomTorque, ForceMode.Impulse);
             }
+
+          
         }
     }
     private void Jugadores()
