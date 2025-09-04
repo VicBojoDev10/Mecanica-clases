@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-public class TiroParabolico : MonoBehaviour
+public class Disparos3 : MonoBehaviour
 {
     float t;
 

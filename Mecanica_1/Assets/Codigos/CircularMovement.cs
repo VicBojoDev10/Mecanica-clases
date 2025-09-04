@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class CircularMovement : MonoBehaviour
@@ -15,13 +14,16 @@ public class CircularMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        center = transform.localPosition;
+        transform.position = positionFunction();
+        radius = Profile(transform.localPosition.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = positionFunction();
+        t += Time.deltaTime;
     }
 
     Vector3 positionFunction()
@@ -34,12 +36,13 @@ public class CircularMovement : MonoBehaviour
 
     float Theta()
     {
-
+        float result = 0.5f * alpha * t * t + omega0 * t + theta0;
+        return (Mathf.PI / 180f) * result;
     }
 
     float Profile(float z)
     {
-
+        return heightParameter * z * (restLength - z);
     }
 }
 

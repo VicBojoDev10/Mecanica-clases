@@ -52,8 +52,8 @@ public class PlayerTurret : MonoBehaviour
         Vector3 position = shootPoint.position;
         Quaternion rotation = shootPoint.rotation;
         GameObject bullet = Instantiate(bulletPrefab, position, rotation);
-        bullet.GetComponent<TiroParabolico>().P0 = shootPoint.position;
-        bullet.GetComponent<TiroParabolico>().V0 = bulletSpeed * shootPoint.forward;
+        bullet.GetComponent<Disparos3>().P0 = shootPoint.position;
+        bullet.GetComponent<Disparos3>().V0 = bulletSpeed * shootPoint.forward;
         Destroy(bullet, bulletLifeSpan);
     }
 

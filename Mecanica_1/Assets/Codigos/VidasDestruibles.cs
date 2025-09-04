@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class VidasDestruibles : MonoBehaviour
 {
     public float Vidas, vidasmaximas = 2f;
-    private Transform target;
-    public float speed;
     public GameObject explosion;
     public GameObject enemy;
+    private Transform target;
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Turret").GetComponent<Transform>();
         Vidas = vidasmaximas;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        
     }
 
     public void daño(float damageamount)
@@ -33,12 +31,15 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    { 
+    {
         if (collision.gameObject.tag == "Enemy")
         {
-          GameObject Explosion = Instantiate(explosion);
-            
-         Destroy(explosion);
+            Vector3 direction = target.position - transform.position;
+            direction.y = 0;
+
+            GameObject Explosion = Instantiate(explosion);
+
+            Destroy(explosion, 1.5f);
         }
     }
 }
