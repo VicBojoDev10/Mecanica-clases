@@ -13,6 +13,7 @@ TagManager:
   - Jug2
   - Jug3
   - Ground
+  - Cuerda
   layers:
   - Default
   - TransparentFX

@@ -11,9 +11,12 @@ public class CircularMovement : MonoBehaviour
     private float radius;
     private Vector3 center;
     private float t;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
         center = transform.localPosition;
         transform.position = positionFunction();
         radius = Profile(transform.localPosition.z);
