@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumperPlayer : MonoBehaviour
+public class Jugador2 : MonoBehaviour
 {
     public float jumpImpulse, gravity;
     private bool grounded;
@@ -19,7 +19,7 @@ public class JumperPlayer : MonoBehaviour
     void Update()
     {
         Physics.gravity = new Vector3(0, gravity, 0);
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if (grounded && Input.GetKeyDown(KeyCode.S))
             rb.AddForce(jumpImpulse * transform.up, ForceMode.Impulse);
     }
 
@@ -29,8 +29,6 @@ public class JumperPlayer : MonoBehaviour
         {
             grounded = true;
         }
-
-
     }
 
     private void OnCollisionExit(Collision collision)
@@ -44,7 +42,7 @@ public class JumperPlayer : MonoBehaviour
     {
         if (other.CompareTag("Cuerda"))
         {
-            Debug.Log("¡El Jugador 1 fue eliminado!");
+            Debug.Log("¡El Jugador 2 fue eliminado!");
             Destroy(Player, 1f);
         }
     }
