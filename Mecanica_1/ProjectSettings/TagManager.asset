@@ -14,6 +14,7 @@ TagManager:
   - Jug3
   - Ground
   - Cuerda
+  - Ball
   layers:
   - Default
   - TransparentFX
