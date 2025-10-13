@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - Cuerda
   - Ball
+  - Barrier2D
   layers:
   - Default
   - TransparentFX
