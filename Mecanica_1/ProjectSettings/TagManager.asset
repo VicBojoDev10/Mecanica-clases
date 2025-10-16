@@ -16,6 +16,8 @@ TagManager:
   - Cuerda
   - Ball
   - Barrier2D
+  - Objetivo
+  - Flecha
   layers:
   - Default
   - TransparentFX

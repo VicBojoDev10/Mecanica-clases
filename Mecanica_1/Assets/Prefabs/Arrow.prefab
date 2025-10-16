@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1644693880575336877}
   m_Layer: 0
   m_Name: pCube1
-  m_TagString: Untagged
+  m_TagString: Flecha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 2109675196244329303}
   - component: {fileID: 6957014132304289964}
   - component: {fileID: 8083719665731142493}
+  - component: {fileID: 7837048516516209769}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Flecha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,16 +110,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5012020019916272847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.2}
+  m_LocalRotation: {x: -0, y: 0.028630113, z: -0, w: -0.9995901}
+  m_LocalPosition: {x: 0.008354572, y: -0.0000000059532006, z: -0.064583525}
+  m_LocalScale: {x: 0.1799, y: 0.1799, z: 0.3598}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5221811758943194136}
   - {fileID: 4909449415893655119}
   - {fileID: 5687740435361875827}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -363.281, z: 0}
 --- !u!96 &6957014132304289964
 TrailRenderer:
   serializedVersion: 3
@@ -259,6 +260,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &7837048516516209769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5012020019916272847}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.934601, y: 5.558643, z: 3.114378}
+  m_Center: {x: -0.01290807, y: 0.000000016545858, z: 0.09026658}
 --- !u!1 &5946266520290123890
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +294,7 @@ GameObject:
   - component: {fileID: 450877194648087695}
   m_Layer: 0
   m_Name: pCylinder1
-  m_TagString: Untagged
+  m_TagString: Flecha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +377,7 @@ GameObject:
   - component: {fileID: 6317246008022691751}
   m_Layer: 0
   m_Name: pCone1
-  m_TagString: Untagged
+  m_TagString: Flecha
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

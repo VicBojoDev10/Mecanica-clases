@@ -5,7 +5,7 @@ using UnityEngine;
 public class BounceBehaviour3D : MonoBehaviour
 {
     public float speed;
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
     private Vector3 direction, bounceVelocity;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class BounceBehaviour3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = rigidbody.velocity.normalized;
+        direction = rb.velocity.normalized;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,14 +32,14 @@ public class BounceBehaviour3D : MonoBehaviour
             float Vt = Vector3.Dot(tangent, velocity);
             float Vn = Vector3.Dot(normal, velocity);
             bounceVelocity = Vt * tangent - Vt * normal;
-            rigidbody.velocity = bounceVelocity;
+            rb.velocity = bounceVelocity;
         }
     }
 
     void StartMovement()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         Vector3 randomVector = Random.onUnitSphere;
-        rigidbody.velocity = speed * randomVector;
+        rb.velocity = speed * randomVector;
     }
 }
