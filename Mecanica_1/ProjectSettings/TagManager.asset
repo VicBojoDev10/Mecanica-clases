@@ -18,6 +18,14 @@ TagManager:
   - Barrier2D
   - Objetivo
   - Flecha
+  - Base
+  - Target
+  - ZonaMuerte
+  - FoosBallPlayer
+  - Porteria
+  - GoalLeft
+  - GoalRight
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -27,7 +35,7 @@ TagManager:
   - UI
   - Torreta
   - Player
-  - 
+  - PlayerBarrier
   - 
   - 
   - 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BounceBehaviour2d : MonoBehaviour
@@ -7,6 +5,7 @@ public class BounceBehaviour2d : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     private Vector2 direction, bounceVelocity;
+    public VideoManager videoManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +31,12 @@ public class BounceBehaviour2d : MonoBehaviour
             float Vy = Vector2.Dot(normal,velocity);
             bounceVelocity = Vx * tangent - Vy * normal;
             rb.velocity = bounceVelocity;
+        }
+        if (collision.gameObject.CompareTag("Target"))
+        {
+            Destroy(collision.gameObject);
+            if (videoManager != null)
+                videoManager.PlaySecondaryVideo();
         }
     }
     Vector2 RotateVector(Vector2 vector, float angle)

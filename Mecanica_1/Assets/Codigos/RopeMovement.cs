@@ -6,12 +6,12 @@ public class RopeMovement : MonoBehaviour
 {
     public float swing;
     public Transform fireBalls;
-    private BezierCruve _beziercurve;
+    private BezierCurve _beziercurve;
     private float time;
     // Start is called before the first frame update
     void Start()
     {
-        _beziercurve = GetComponent<BezierCruve>();
+        _beziercurve = GetComponent<BezierCurve>();
     }
 
     private void FixedUpdate()
